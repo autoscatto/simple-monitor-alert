@@ -61,7 +61,7 @@ class Telegram(AlertBase):
         else:
             message = '<b>{subject}</b>\n{message}'.format(subject=escape(subject), message=escape(message))
             message = message.encode('utf-8', 'ignore')
-        self.bot.sendMessage(chat_id=self.config['to'], text=message.decode('utf-8'), parse_mode='html')
+        self.bot.sendMessage(chat_id=self.config['to'], text=message, parse_mode='html')
         return True
 
 Alert = Telegram
