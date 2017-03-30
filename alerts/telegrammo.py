@@ -41,14 +41,18 @@ LEVELS = {
 
 class Telegram(AlertBase):
     bot = None
+    hostname =None
 
     def init(self):
         token = self.config.get('token')
+        self.hostname = self.config.get('hostname')
         self.bot = telegram.Bot(token)
 
 
     def send(self, subject, message, observable_name='', name='', extra_info=None, level='warning', fail=True,
              condition='', hostname=None, observable=None):
+        if self.hostname:
+            hostname = self.hostname
         if observable_name:
             icon = LEVELS.get(level)
             condition_status = 'Failed' if fail else 'Successful'
