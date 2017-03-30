@@ -21,12 +21,12 @@ from simple_monitor_alert.alerts import AlertBase
 
 SUPPORT_ALERT_IMPORT = True
 DEFAULT_MESSAGE = """\
- {hostname} [{level}] Simple-Monitor-Alert
- <strong>{name}</strong>
-{extra_info}
+{hostname} [{level}]
+<strong>{name}</strong>
+    {extra_info}
 
-Observable: {observable_name}
-{condition_status} condition: {condition}
+    Observable: {observable_name}
+    {condition_status} condition: {condition}
 """
 
 
